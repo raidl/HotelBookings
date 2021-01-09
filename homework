@@ -1,1 +1,161 @@
 
+package hotelbookings;
+import java.util.*;
+
+public class HotelBookings {
+
+    
+    public static void main(String[] args) {
+        
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("Hi, welcome to my Hotel");
+        System.out.println("Which kind of room do you want");
+        System.out.println("1 - Single (£50)");
+        System.out.println("2 - Double (£75)");
+        System.out.println("3 - Family (£105");
+        int userRoom = input.nextInt();
+        while (userRoom != 1 && userRoom != 2 && userRoom != 3){
+            System.out.println("Invalid input, please try again");
+            System.out.println("Which kind of room do you want");
+            System.out.println("1 - Single (£50)");
+            System.out.println("2 - Double (£75)");
+            System.out.println("3 - Family (£105)");
+            int userRoom1 = input.nextInt();
+            userRoom = userRoom1;
+        }
+        if (userRoom == 1 || userRoom ==2 || userRoom == 3){
+        
+        switch(userRoom){
+            case 1:
+                SingleRoom();
+                break;
+                
+            case 2:
+                
+                DoubleRoom();
+                break;
+                
+            case 3:
+                
+                FamilyRoom();
+                break;
+        
+        }
+        }
+    
+    }
+    
+    private static void SingleRoom(){
+           double costPerDay = 0;
+            double totalCost = 0;
+            double noDiscountCost = 0;
+            Scanner input = new Scanner(System.in);
+            System.out.println("How do you want to be catered?");
+            System.out.println("1 - Full-Board (£20)");
+            System.out.println("2 - Half-Board (£10)");
+            System.out.println("3 - Self Catered (£0)");
+            int userFood = input.nextInt();
+            while ((userFood != 1) && (userFood != 2) && (userFood!=3)){
+                System.out.println("Invalid Input, please try again");
+                System.out.println("How do you want to be catered?");
+                System.out.println("1 - Full-Board (£20)");
+                System.out.println("2 - Half-Board (£10)");
+                System.out.println("3 - Self Catered (£0)");
+                int userFood1 = input.nextInt();
+                userFood = userFood1;
+            }
+            if (userFood == 1){
+                costPerDay = 70;
+            }else if(userFood == 2){
+                costPerDay = 60;
+            }else{
+                costPerDay = 50;
+            }
+            System.out.println("How many days are you staying?\nThere is a 20% for everyday you stay over a week. Enter numberical value.");
+            int daysStaying = input.nextInt();
+            if (daysStaying <= 7){
+                totalCost = (daysStaying * costPerDay);
+            }else{
+                totalCost = (costPerDay*7) + ((costPerDay * 0.8) * (daysStaying-7));
+            }
+            noDiscountCost = costPerDay * daysStaying;
+            System.out.println("Your total cost - discount included - comes to £" + totalCost);
+            System.out.println("Your total cost without the discount comes to &" + noDiscountCost);
+        }
+        
+        private static void DoubleRoom(){
+            double costPerDay = 0;
+            double totalCost = 0;
+            double noDiscountCost = 0;
+            Scanner input = new Scanner(System.in);
+            System.out.println("How do you want to be catered?");
+            System.out.println("1 - Full-Board (£20)");
+            System.out.println("2 - Half-Board (£10)");
+            System.out.println("3 - Self Catered (£0)");
+            int userFood = input.nextInt();
+            while ((userFood != 1) && (userFood != 2) && (userFood!=3)){
+                System.out.println("Invalid Input, please try again");
+                System.out.println("How do you want to be catered?");
+                System.out.println("1 - Full-Board (£20)");
+                System.out.println("2 - Half-Board (£10)");
+                System.out.println("3 - Self Catered (£0)");
+                int userFood1 = input.nextInt();
+                userFood = userFood1;
+            }
+            if (userFood == 1){
+                costPerDay = 95;
+            }else if(userFood == 2){
+                costPerDay = 85;
+            }else{
+                costPerDay = 75;
+            }
+            System.out.println("How many days are you staying?\nThere is a 20% for everyday you stay over a week. Enter numberical value.");
+            int daysStaying = input.nextInt();
+            if (daysStaying <= 7){
+                totalCost = (daysStaying * costPerDay);
+            }else{
+                totalCost = (costPerDay*7) + ((costPerDay * 0.8) * (daysStaying-7));
+            }
+            noDiscountCost = costPerDay * daysStaying;
+            System.out.println("Your total cost - discount included - comes to £" + totalCost);
+            System.out.println("Your total cost without the discount comes to &" + noDiscountCost);
+    }
+        private static void FamilyRoom(){
+            double costPerDay = 0;
+            double totalCost = 0;
+            double noDiscountCost = 0;
+            Scanner input = new Scanner(System.in);
+            System.out.println("How do you want to be catered?");
+            System.out.println("1 - Full-Board (£20)");
+            System.out.println("2 - Half-Board (£10)");
+            System.out.println("3 - Self Catered (£0)");
+            int userFood = input.nextInt();
+            while ((userFood != 1) && (userFood != 2) && (userFood!=3)){
+                System.out.println("Invalid Input, please try again");
+                System.out.println("How do you want to be catered?");
+                System.out.println("1 - Full-Board (£20)");
+                System.out.println("2 - Half-Board (£10)");
+                System.out.println("3 - Self Catered (£0)");
+                int userFood1 = input.nextInt();
+                userFood = userFood1;
+            }
+            if (userFood == 1){
+                costPerDay = 125;
+            }else if(userFood == 2){
+                costPerDay = 115;
+            }else{
+                costPerDay = 105;
+            }
+            System.out.println("How many days are you staying?\nThere is a 20% for everyday you stay over a week. Enter numberical value.");
+            int daysStaying = input.nextInt();
+            if (daysStaying <= 7){
+                totalCost = (daysStaying * costPerDay);
+            }else{
+                totalCost = (costPerDay*7) + ((costPerDay * 0.8) * (daysStaying-7));
+            }
+            noDiscountCost = costPerDay * daysStaying;
+            System.out.println("Your total cost - discount included - comes to £" + totalCost);
+            System.out.println("Your total cost without the discount comes to &" + noDiscountCost);
+}
+}
